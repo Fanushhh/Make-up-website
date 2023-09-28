@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Quicksand', sans-serif;
+  overflow-x: hidden;
+}
+html{
+  scroll-behavior: smooth;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+.hero-section{
+  background: var(--gradient, linear-gradient(46deg, #B8EAD7 0%, #C9A5A8 100%));
+}
+nav{
+  background: var(--gradient, linear-gradient(46deg, #B8EAD7 0%, #C9A5A8 100%));
+}
+.swiper-wrapper{
+  padding-bottom: 5rem;
+  
+}
+.faqs {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  
+}
+
+.faqs .faq {
+  margin: 15px 15px 15px 0;
+  
+}
+
+.faqs .faq .faq-question {
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.faqs .faq .faq-question::after {
+  content: "+";
+  font-weight: bold;
+  font-size:20px;
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  transition: content 0.2s ease;
+}
+
+.faqs .faq .faq-answer {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease, opacity 200ms ease;
+}
+
+.faqs .faq.open .faq-question {
+  margin-bottom: 15px;
+}
+
+.faqs .faq.open .faq-question::after {
+  content: "x";
+}
+
+.faqs .faq.open .faq-answer {
+  max-height: 1000px;
+  opacity: 1;
+}
+a:hover{
+  color:black;
+  transition: all 250ms ease-in-out;
+}
+
+button:hover{
+  background-color: #67b396;
+  transition: all 250ms ease-in-out;
+}
